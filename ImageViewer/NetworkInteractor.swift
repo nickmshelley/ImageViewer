@@ -52,14 +52,14 @@ private struct Response: Decodable {
 }
 
 class NetworkInteractor {
-    static func fetchImages(completion: @escaping () -> Void) {
+    static func fetchImages(completion: @escaping ([USAImage]) -> Void) {
         let url = URL(string: "https://api.gannett-cdn.com/internal/MobileServices/MMediaService.svc/mcontent/v1/gallery?galleryId=5197105&api_key=rtxdju9wfw78treew9uuhhsj")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return completion() }
+            guard let data = data else { return completion([]) }
             
             let response = try! JSONDecoder().decode(Response.self, from: data)
-            print(response.images)
+            completion(response.images)
         }
         
         task.resume()
