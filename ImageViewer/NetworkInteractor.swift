@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 struct USAImage {
     let thumbnailURL: URL
@@ -36,9 +37,9 @@ private struct Response: Decodable {
                 let slide = try slidesContainer.nestedContainer(keyedBy: CodingKeys.self)
                 let metadata = try slide.nestedContainer(keyedBy: CodingKeys.self, forKey: .metaData)
                 let cropsContainer = try metadata.nestedContainer(keyedBy: CodingKeys.self, forKey: .crops)
-                let nineBySixteen = try cropsContainer.decode(String.self, forKey: .nineBySixteen)
+                let nineBySixteen = try cropsContainer.decode(String.self, forKey: .nineBySixteen).replacingOccurrences(of: "http:", with: "https:")
                 let items = try metadata.nestedContainer(keyedBy: CodingKeys.self, forKey: .items)
-                let base = try items.decode(String.self, forKey: .publishurl)
+                let base = try items.decode(String.self, forKey: .publishurl).replacingOccurrences(of: "http:", with: "https:")
                 let path = try items.decode(String.self, forKey: .smallbasename)
                 
                 if let thumbURL = URL(string: base + path), let cropURL = URL(string: nineBySixteen) {
@@ -63,5 +64,19 @@ class NetworkInteractor {
         }
         
         task.resume()
+    }
+    
+    static func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> URLSessionDataTask {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return completion(nil) }
+            
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                completion(image)
+            }
+        }
+        
+        task.resume()
+        return task
     }
 }
