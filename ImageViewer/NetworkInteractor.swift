@@ -66,6 +66,7 @@ class NetworkInteractor {
         task.resume()
     }
     
+    @discardableResult
     static func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> URLSessionDataTask {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return completion(nil) }

@@ -51,4 +51,10 @@ extension ImagesViewController: UICollectionViewDataSource, UICollectionViewDele
         cell.configure(with: images[indexPath.item].thumbnailURL)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let vc = ImageViewController(url: images[indexPath.item].nineBySixteenURL)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

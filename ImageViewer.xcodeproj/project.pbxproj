@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3298FE302267F4770061AF0C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3298FE2F2267F4770061AF0C /* ImageCell.swift */; };
+		3298FE322267FB040061AF0C /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3298FE312267FB040061AF0C /* ImageViewController.swift */; };
 		32D41A832266B74A00C24448 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D41A822266B74A00C24448 /* AppDelegate.swift */; };
 		32D41A852266B74A00C24448 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D41A842266B74A00C24448 /* ImagesViewController.swift */; };
 		32D41A8A2266B74B00C24448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D41A892266B74B00C24448 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		3298FE2F2267F4770061AF0C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		3298FE312267FB040061AF0C /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		32D41A7F2266B74A00C24448 /* ImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D41A822266B74A00C24448 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D41A842266B74A00C24448 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				32D41A842266B74A00C24448 /* ImagesViewController.swift */,
 				32D41A942266BDA000C24448 /* NetworkInteractor.swift */,
 				3298FE2F2267F4770061AF0C /* ImageCell.swift */,
+				3298FE312267FB040061AF0C /* ImageViewController.swift */,
 				32D41A892266B74B00C24448 /* Assets.xcassets */,
 				32D41A8B2266B74B00C24448 /* LaunchScreen.storyboard */,
 				32D41A8E2266B74B00C24448 /* Info.plist */,
@@ -139,6 +142,7 @@
 			files = (
 				32D41A852266B74A00C24448 /* ImagesViewController.swift in Sources */,
 				3298FE302267F4770061AF0C /* ImageCell.swift in Sources */,
+				3298FE322267FB040061AF0C /* ImageViewController.swift in Sources */,
 				32D41A952266BDA000C24448 /* NetworkInteractor.swift in Sources */,
 				32D41A832266B74A00C24448 /* AppDelegate.swift in Sources */,
 			);
